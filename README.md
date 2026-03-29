@@ -72,22 +72,32 @@ Use compact mode and description truncation to feed data into AI agents, MCP ser
 
 ## FAQ
 
-<!-- WRITE: 4-6 Q&A pairs relevant to this product -->
-
 **Is it legal to scrape Bayt.com?**
-Web scraping of publicly available data is generally legal. This actor only accesses publicly visible information. Always check the target site's terms of service for your specific use case.
+Web scraping of publicly available data is generally legal. This actor only accesses publicly visible information that any visitor can see. Always review the target site's terms of service for your specific use case.
+
+**Which countries does Bayt.com cover?**
+Bayt.com is the leading job board for the MENA region — Middle East and North Africa. It covers UAE, Saudi Arabia, Egypt, Kuwait, Qatar, Bahrain, Oman, Jordan, Lebanon, and more.
 
 **How does incremental mode work?**
-Each listing gets a content hash. On subsequent runs, only new or changed listings are emitted — saving time, compute, and storage.
+Each listing gets a content hash. On subsequent runs, only new or changed listings are emitted — saving time, compute, and storage. Set `incrementalMode: true` and provide a stable `stateKey` to track a specific search query across runs.
+
+**What is compact mode for?**
+Compact mode returns only the core fields (title, company, location, URL, salary) with no full description. It is designed for AI agent and MCP workflows where token budget is limited.
+
+**How do I get full job descriptions?**
+Set `includeDetails: true` (the default). The actor fetches each detail page and extracts the full description, skills required, career level, and employer profile.
+
+**Can I filter by salary or career level?**
+Yes — use the `careerLevel` and `employmentType` enum filters. Salary filters are not exposed as a direct input parameter but are available via keyword search.
 
 ---
 
 ## Known limitations
 
-<!-- WRITE: 4-6 honest limitations -->
-
-- <!-- WRITE: limitation 1 -->
-- <!-- WRITE: limitation 2 -->
+- Bayt.com enforces rate limits on rapid sequential requests. The actor respects these automatically via built-in request throttling.
+- Job listings that require a login to view full details (e.g. salary negotiation, hidden employer names) cannot be accessed — only publicly visible data is extracted.
+- Search results are limited to what Bayt.com's search engine returns. Very broad queries may return fewer results than expected due to platform-side pagination caps.
+- Some fields (salary, phone, contact email) are only present on a subset of listings where the employer chooses to disclose them.
 
 ---
 
