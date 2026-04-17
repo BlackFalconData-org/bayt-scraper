@@ -2,11 +2,12 @@
 
 Extract structured data from [Bayt.com](https://Bayt.com) — job listings from Bayt.com. Get title, company, salary, career level, description, and more from the leading MENA job board.
 
-**[Bayt.com Scraper on Apify →](https://apify.com/blackfalcondata/bayt-scraper)**
+**[Bayt.com Scraper - Jobs from the Middle East on Apify →](https://apify.com/blackfalcondata/bayt-scraper)**
 
 ---
 
 ## Key features
+
 
 
 
@@ -19,6 +20,7 @@ Extract structured data from [Bayt.com](https://Bayt.com) — job listings from 
 ---
 
 ## Use cases
+
 
 
 
@@ -93,6 +95,7 @@ Yes — use the `careerLevel` and `employmentType` enum filters. Salary filters 
 ---
 
 ## Related products by Black Falcon Data
+
 
 
 
