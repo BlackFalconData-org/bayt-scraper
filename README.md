@@ -2,11 +2,12 @@
 
 Extract structured data from [Bayt.com](https://Bayt.com) — job listings from Bayt.com. Get title, company, salary, career level, description, and more from the leading MENA job board.
 
-**[Bayt.com Scraper - Jobs from the Middle East on Apify →](https://apify.com/blackfalcondata/bayt-scraper)**
+**[Bayt.com Scraper - Jobs from the Middle East on Apify →](https://apify.com/blackfalcondata/bayt-scraper?fpr=1h3gvi)**
 
 ---
 
 ## Key features
+
 
 
 
@@ -17,9 +18,20 @@ Extract structured data from [Bayt.com](https://Bayt.com) — job listings from 
 
 **Incremental mode** — Only get new or changed listings since your last run. Content hash per listing — no duplicates, no re-processing.
 
+**Compact output** — Emit core fields only (AI-agent / MCP-friendly). Keeps response size small for LLM workflows.
+
+**Description truncation** — Cap description length per listing to control output size and cost.
+
+**Result cap** — Stop after N listings (up to 10.000). Set to 0 for the full catalog.
+
+**Export anywhere** — Download as JSON, CSV, or Excel. Stream via Apify API, webhooks, or integrations with Make, Zapier, Airbyte, Keboola.
+
+**Structured data** — Every listing returns the same schema with consistent field naming. All fields always present — `null` when unavailable, never omitted.
+
 ---
 
 ## Use cases
+
 
 
 
@@ -29,6 +41,12 @@ Integrate with your ETL pipeline to collect structured listings from bayt.com on
 
 **Market research**
 Monitor listings, track trends, and analyze market dynamics with structured, deduplicated data from bayt.com.
+
+**Change monitoring**
+Run daily or hourly in incremental mode to capture only new, updated, or expired listings. Perfect for price-tracking, churn analysis, and alerting pipelines.
+
+**AI / LLM training data**
+Structured JSON per listing is ready for RAG pipelines, embeddings, and agent workflows. Compact mode trims tokens for LLM context windows.
 
 ---
 
@@ -92,6 +110,84 @@ Yes — use the `careerLevel` and `employmentType` enum filters. Salary filters 
 - Search results are limited to what Bayt.com's search engine returns. Very broad queries may return fewer results than expected due to platform-side pagination caps.
 - Some fields (salary, phone, contact email) are only present on a subset of listings where the employer chooses to disclose them.
 
+
+## Output fields
+
+Every listing returns the same 33-field schema. Missing values are `null` — never omitted.
+
+- `jobId`
+- `title`
+- `company`
+- `companyUrl`
+- `companyLogoUrl`
+- `location`
+- `city`
+- `country`
+- `salaryText`
+- `salaryCurrency`
+- `salaryMin`
+- `salaryMax`
+- `salaryPeriod`
+- `employmentType`
+- `careerLevel`
+- `yearsOfExperience`
+- `industry`
+- `companySize`
+- `description`
+- `skills`
+- `nationality`
+- `gender`
+- `directApply`
+- `totalOpenings`
+- `isRemote`
+- `isExternal`
+- `url`
+- `applyUrl`
+- `postedDate`
+- `validThrough`
+- `portalUrl`
+- `scrapedAt`
+- `source`
+
+
+## Sample output
+
+One object per listing. Here is a real example from a production run:
+
+```json
+{
+  "jobId": "bc6c5b5dc3adc830cf326f7cf8ab2799ba070c499227c12d90757463ea84989f",
+  "title": "Private Executive Assistant (Arabic–English Bilingual)",
+  "company": "FYM Catering LLC",
+  "companyUrl": "https://www.bayt.com/en/company/fym-catering-llc-2295393/",
+  "companyLogoUrl": null,
+  "location": "Dubai, UAE",
+  "city": "Dubai",
+  "country": "AE",
+  "salaryText": "AED 7,407 - AED 11,111",
+  "salaryCurrency": "USD",
+  "salaryMin": 2000,
+  "salaryMax": 3000
+}
+```
+
+*Truncated — full records contain 33 fields. See Output fields for the complete schema.*
+
+
+**[Try Bayt.com Scraper - Jobs from the Middle East now — $5 free credit, no credit card →](https://apify.com/blackfalcondata/bayt-scraper?fpr=1h3gvi)**
+
+
+## Pricing
+
+Pay only for what you extract. No subscription required — Apify's free $5 credit covers thousands of results.
+
+| Event | Price (USD) |
+| --- | --- |
+| Actor Start | $0.01 |
+| Result | $0.002 |
+
+See the [actor on Apify](https://apify.com/blackfalcondata/bayt-scraper?fpr=1h3gvi) for current pricing.
+
 ---
 
 ## Related products by Black Falcon Data
@@ -99,10 +195,33 @@ Yes — use the `careerLevel` and `employmentType` enum filters. Salary filters 
 
 
 
-- [StepStone Scraper](https://github.com/BlackFalconData-org/stepstone-scraper) — Job listings from 18 European portals
-- [Indeed Job Scraper](https://github.com/BlackFalconData-org/indeed-job-scraper) — Indeed job listings with salary data
-- [Glassdoor Job Scraper](https://github.com/BlackFalconData-org/glassdoor-job-scraper) — Glassdoor listings with company ratings
 
+- [StepStone Scraper](https://apify.com/blackfalcondata/stepstone-scraper?fpr=1h3gvi) — Job listings from 18 European portals
+- [Indeed Job Scraper](https://apify.com/blackfalcondata/indeed-job-scraper?fpr=1h3gvi) — Indeed job listings with salary data
+- [Glassdoor Job Scraper](https://apify.com/blackfalcondata/glassdoor-job-scraper?fpr=1h3gvi) — Glassdoor listings with company ratings
+- [Arbeitsagentur Scraper](https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi) — Germany's official job portal (1M+ listings)
+- [SEEK Scraper](https://apify.com/blackfalcondata/seek-scraper?fpr=1h3gvi) — Australia & NZ's largest job board
+- [Naukri Scraper](https://apify.com/blackfalcondata/naukri-scraper?fpr=1h3gvi) — India's largest job portal
+
+
+## Getting started with Apify
+
+New to Apify? [Create a free account with $5 credit](https://console.apify.com/sign-up?fpr=1h3gvi) — no credit card required.
+
+1. [Sign up free](https://console.apify.com/sign-up?fpr=1h3gvi) — $5 credit included
+2. Open the actor and paste your input
+3. Click Start — results download as JSON, CSV, or Excel
+
+Need more volume? [See pricing](https://apify.com/pricing?fpr=1h3gvi).
+
+---
+
+
+## About Black Falcon Data
+
+Black Falcon Data builds production-grade web scrapers for job boards and marketplace data. Browse our full actor catalog at [www.blackfalcondata.com](https://www.blackfalcondata.com).
+
+---
 ---
 
 *Last updated: 2026 03*
