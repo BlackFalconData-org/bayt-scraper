@@ -2,7 +2,22 @@
 
 Extract structured data from [Bayt.com](https://Bayt.com) — job listings from Bayt.com. Get title, company, salary, career level, description, and more from the leading MENA job board.
 
-**[Bayt.com Scraper - Jobs from the Middle East on Apify →](https://apify.com/blackfalcondata/bayt-scraper?fpr=1h3gvi)**
+**[Bayt.com Scraper on Apify →](https://apify.com/blackfalcondata/bayt-scraper?fpr=1h3gvi)**
+
+
+## 🚀 How to use this actor
+
+> ### 💚 $5 free Apify credits — every month
+> No credit card required. No commitment. Cancel anytime.
+
+### 👉 [Sign up free on Apify →](https://console.apify.com/sign-up?fpr=1h3gvi)
+
+1. **Click sign up** — pick GitHub, Google, or email; takes ~30 seconds
+2. **Open this actor** — input is pre-filled with a working example
+3. **Click Start** — export results as JSON, CSV, or Excel
+
+Your **$5 monthly platform credit** is enough to run this actor right away — and again every month — scraping typically several hundred to several thousand results per run, depending on your input.
+
 
 ---
 
@@ -13,17 +28,20 @@ Extract structured data from [Bayt.com](https://Bayt.com) — job listings from 
 
 
 
-**Search with filters** — Search by keyword and location. Filter by country, employment type, career level, and more.
 
-**Detail enrichment** — Fetch full job descriptions, salary data for each listing.
+**Search with filters** — Search by keyword and location. Filter by 🌍 country, 💼 employment type, 📈 career level, and more.
+
+**Detail enrichment** — Fetch full job descriptions, salary data, contact information for each listing.
 
 **Incremental mode** — Only get new or changed listings since your last run. Content hash per listing — no duplicates, no re-processing.
+
+**Change classification** — Track unchanged, expired, cross-run repost detection across runs. Build audit trails of how listings evolve over time.
 
 **Compact output** — Emit core fields only (AI-agent / MCP-friendly). Keeps response size small for LLM workflows.
 
 **Description truncation** — Cap description length per listing to control output size and cost.
 
-**Result cap** — Stop after N listings (up to 10.000). Set to 0 for the full catalog.
+**Result cap** — Stop after N listings (up to 1.000). Set to 0 for the full catalog.
 
 **Export anywhere** — Download as JSON, CSV, or Excel. Stream via Apify API, webhooks, or integrations with Make, Zapier, Airbyte, Keboola.
 
@@ -38,6 +56,7 @@ Extract structured data from [Bayt.com](https://Bayt.com) — job listings from 
 
 
 
+
 **Data pipeline automation**
 Integrate with your ETL pipeline to collect structured listings from bayt.com on a schedule. Export to CSV, JSON, or directly to your database. Use compact mode to control output size.
 
@@ -46,6 +65,12 @@ Monitor listings, track trends, and analyze market dynamics with structured, ded
 
 **Change monitoring**
 Run daily or hourly in incremental mode to capture only new, updated, or expired listings. Perfect for price-tracking, churn analysis, and alerting pipelines.
+
+**Compensation benchmarking**
+Aggregate salary ranges across roles, industries, and locations on bayt.com to inform pricing decisions, hiring plans, or candidate negotiations.
+
+**Lead generation**
+Extract employer contact details alongside listings to build outreach lists for recruiters, staffing agencies, or B2B sales teams.
 
 **AI / LLM training data**
 Structured JSON per listing is ready for RAG pipelines, embeddings, and agent workflows. Compact mode trims tokens for LLM context windows.
@@ -199,12 +224,13 @@ See the [actor on Apify](https://apify.com/blackfalcondata/bayt-scraper?fpr=1h3g
 
 
 
+
 - [StepStone Scraper](https://apify.com/blackfalcondata/stepstone-scraper?fpr=1h3gvi) — Job listings from 18 European portals
 - [Indeed Job Scraper](https://apify.com/blackfalcondata/indeed-job-scraper?fpr=1h3gvi) — Indeed job listings with salary data
+- [LinkedIn Jobs Scraper](https://apify.com/blackfalcondata/linkedin-jobs-scraper?fpr=1h3gvi) — World's largest professional network — global job listings, no login required
 - [Glassdoor Job Scraper](https://apify.com/blackfalcondata/glassdoor-job-scraper?fpr=1h3gvi) — Glassdoor listings with company ratings
 - [Arbeitsagentur Scraper](https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi) — Germany's official job portal (1M+ listings)
 - [SEEK Scraper](https://apify.com/blackfalcondata/seek-scraper?fpr=1h3gvi) — Australia & NZ's largest job board
-- [Naukri Scraper](https://apify.com/blackfalcondata/naukri-scraper?fpr=1h3gvi) — India's largest job portal
 
 ---
 
